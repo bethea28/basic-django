@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
         <!-- Registration form -->
-        <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data" action="/register/">
             {% csrf_token %}  <!-- CSRF token for security -->
 
             <!-- Registration form heading -->
@@ -55,7 +55,7 @@
             </div>
 
             <!-- Link to login page for users who already have an account -->
-            <p>Already have an account <a href="/login/">Login</a> </p>
+            <p>Already have an account <a href="/">Login</a> </p>
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary">Submit</button>
