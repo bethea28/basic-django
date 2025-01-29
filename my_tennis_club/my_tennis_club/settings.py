@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "members_app",
     'book_app',
-    'corsheaders'
+    'authentication_app'
+    # 'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -50,12 +51,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 
 ]
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Replace with the actual URL of your React development server
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",  # Replace with the actual URL of your React development server
+#     'exp://172.20.10.3:8081',
+#     'http://localhost:8081'
+# ]
 ROOT_URLCONF = 'my_tennis_club.urls'
 
 TEMPLATES = [
@@ -118,6 +121,14 @@ USE_I18N = True
 
 USE_TZ = True
 
+import os 
+STATIC_URL = '/static/'
+STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIR = {
+    os.path.join(BASE_DIR, 'public/static')
+}
+MEDIA_ROOT = os.path.join(BASE_DIR, 'public/static')
+MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -128,3 +139,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
