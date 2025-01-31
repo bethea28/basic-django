@@ -36,7 +36,16 @@ def login_page(request):
         else:
             # Log in the user and redirect to the home page upon successful login
             login(request, user)
-            return redirect('/home/')
+            user_data = {
+                'username': user.username,
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+            }
+            
+            # Render the home page template with user data
+            return render(request, 'home.html', {'user_data': user_data})
+            # return redirect('/home/')
     
     # Render the login page template (GET request)
     return render(request, 'login.html')
