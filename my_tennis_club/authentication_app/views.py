@@ -44,7 +44,7 @@ def login_page(request):
             }
             
             # Render the home page template with user data
-            return render(request, 'home.html', {'user_data': user_data})
+            return render(request, 'login.html', {'user_data': user_data})
             # return redirect('/home/')
     
     # Render the login page template (GET request)
