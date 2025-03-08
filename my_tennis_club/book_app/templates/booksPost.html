@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Hey Bryan Bethea</h1>
+    <p>Come read my book</p>
+
+   
+
+    <div class="container mt-5">
+        <!-- Login form -->
+        <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data" action="">
+
+            {% csrf_token %}  <!-- CSRF token for security -->
+
+
+            <!-- Display error/success messages -->
+            {% if messages %}
+            <div class="alert alert-primary" role="alert">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- Username input field -->
+            <div class="form-group">
+                <label for="exampleInputEmail1">title</label>
+                <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="title" required>
+            </div>
+
+            <!-- Password input field -->
+            <div class="form-group">
+                <label for="exampleInputPassword1">author</label>
+                <input type="text" name="author" class="form-control" id="exampleInputPassword1" placeholder="author" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">year</label>
+                <input type="text" name="year" class="form-control" id="exampleInputPassword1" placeholder="year" required>
+            </div>
+
+       
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
